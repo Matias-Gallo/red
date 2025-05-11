@@ -1,0 +1,18 @@
+Si la salida del comando ip address show muestra lo siguiente:
+Código
+
+2: wlan0: <... > mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 0a:1b:c2:3d:4e:5f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.100/24 brd 192.168.1.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::6a1b:c2ff:fecd:3d4e/64 scope link
+       valid_lft forever preferred_lft forever
+En este caso, la dirección IP es 192.168.1.100 y la máscara de red es /24.
+Esto significa que tu dispositivo está en el segmento de red 192.168.1.0/24.
+Alternativa (si no tienes ip address):
+Si por alguna razón no tienes el comando ip address (lo cual es poco común),
+ puedes usar el comando ifconfig (aunque ifconfig es considerado obsoleto en algunas distribuciones),
+ o ip addr (una alternativa a ip address).
+ El comando ifconfig o ip addr te mostrará información similar sobre las interfaces de red. 
+En resumen, para determinar tu segmento de red en Linux,
+ busca la dirección IP y la máscara de red de la interfaz de red activa y usa esa información para identificar el segmento.
